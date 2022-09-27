@@ -1,0 +1,87 @@
+body {
+    margin: 0; 
+    padding: 0; 
+}
+
+ul.nav__menu {
+    background-color: black;
+    margin: 0;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    cursor: pointer;
+    margin: 0rem 1.75rem;
+    right:0;
+    width: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 9px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+  ul.nav__menu {
+    display: flex;
+    flex-direction:column;
+    gap: 2rem;
+    align-items:center;
+    padding: 1rem;
+  }
+
+  #homebutton {
+    list-style: none;
+    color: white;
+    font-family: 'Abhaya Libre', serif;
+    border: none;
+    background: none;
+    font-size: 2.25rem;
+    margin-right: auto;
+  }
+
+  #homebutton:hover {
+    color:rgb(38, 172, 255)
+  }
+
+  li {
+    list-style:none;
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+  }
+
+  a:hover {
+   color: rgb(38, 172, 255)
+  }
+
+  #nav__checkbox {
+    display: none;
+  }
+
+  #nav__checkbox:checked ~ ul.nav__menu li {
+    display: block;
+  }
+  
