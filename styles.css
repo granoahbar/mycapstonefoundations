@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Nunito:wght@200;400&display=swap');
+
 body {
     margin: 0; 
     padding: 0; 
 }
+
 
 ul.nav__menu {
     background-color: black;
@@ -18,13 +21,19 @@ ul.nav__menu {
     width: 1.5rem;
     padding: 1rem;
   }
-  
+
   .bar1, .bar2, .bar3 {
     width: 35px;
     height: 2px;
     background-color: rgb(255, 255, 255);
     margin: 9px 0;
     transition: 0.4s;
+  }
+
+  .bar1:hover, .bar2:hover, .bar3:hover {
+    background: -webkit-linear-gradient( rgb(94, 188, 255), rgb(242, 98, 255));
+    -webkit-background-clip: content-box;
+    -webkit-text-fill-color: transparent;
   }
   
   /* Rotate first bar */
@@ -59,7 +68,9 @@ ul.nav__menu {
   }
 
   #homebutton:hover {
-    color:rgb(38, 172, 255)
+    background: -webkit-linear-gradient( rgb(94, 188, 255), rgb(242, 98, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   li {
@@ -71,10 +82,14 @@ ul.nav__menu {
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 1.2rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 100;
   }
 
   a:hover {
-   color: rgb(38, 172, 255)
+    background: -webkit-linear-gradient(rgb(94, 188, 255), rgb(242, 98, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   #nav__checkbox {
@@ -84,4 +99,31 @@ ul.nav__menu {
   #nav__checkbox:checked ~ ul.nav__menu li {
     display: block;
   }
-  
+
+  @media only screen and (min-width:700px) {
+    ul.nav__menu {
+        flex-direction: row;
+    }
+    li {
+        display: block;
+    }
+    a {
+        font-size: 14px;
+    }
+    .bar1, .bar2, .bar3 {
+        display: none;
+    }
+  }
+
+  body {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('photos/AdobeStock_107926204.jpeg');
+  }
+
+  @media only screen and (min-width:1200px) {
+    body {
+        background-image: url('photos/AdobeStock_100091053.jpeg');
+    }
+  }
