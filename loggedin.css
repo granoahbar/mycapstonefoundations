@@ -124,7 +124,7 @@ ul.nav__menu {
     flex-direction:row;
     gap: 2rem;
     align-items:center;
-    padding: 1.5rem;
+    padding-top: 1.5rem;
     justify-content: center;
   }
 
@@ -132,10 +132,18 @@ ul.nav__menu {
     background-color: #454545;
     border-color: transparent;
     border-style: solid;
-    width: 130px;
+    width: 70px;
+    height: 40px;
     text-align: center;
     border-radius: 25px;
-    padding: 10px;
+    padding: 5px;
+    font-size: x-small;
+  }
+
+  #dashhomebutton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
   }
 
   #friends__search {
@@ -143,10 +151,32 @@ ul.nav__menu {
     flex-direction:row;
     gap: 2rem;
     align-items:center;
-    padding: 1.5rem;
+    padding-top: 1.5rem;
     justify-content: center;
   }
 
+  #friendssearchbutton {
+    background-color: #454545;
+    border-color: transparent;
+    border-style: solid;
+    text-align: center;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: x-small;
+    color: white;
+  }
+
+  #friendssearchbar {
+    background-color: #454545;
+    border-color: transparent;
+    border-style: solid;
+    text-align: center;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: x-small;
+    color: white;
+    width: 200px;
+  }
 
 
   #friends__display {
@@ -156,4 +186,6 @@ ul.nav__menu {
     align-items:center;
     padding: 1.5rem;
     justify-content: center;
+    color: white;
+    font-size: large;
   }
