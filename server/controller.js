@@ -14,8 +14,38 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 })
 
 module.exports = {
-    getUserInfo: (req,res) => {
-        sequelize.query('')
+    getFriends: (req,res) => {
+        sequelize.query('SELECT * FROM friends')
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
+    }
+    ,
+    deleteFriends: (req,res) => {
+        sequelize.query('DELETE FROM friends WHERE first_name =  ')
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
+    }
+    ,
+    addEvents: (req,res) => {
+        const {name, date, time} = req.body
+
+        sequelize.query(`INSERT INTO events (event_name, event_date, event_time)
+        VALUES ('${event_name}', ${friend_Id}, '${event_date}', '${event_time}';,)
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
+    }
+    ,
+    displayEvents: (req,res) => {
+        sequelize.query('SELECT * FROM events')
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
+    }
+    ,
+    deleteEvents: (req,res) => {
+        sequelize.query('DELETE FROM events WHERE event_name =  ')
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
     }
  }
  

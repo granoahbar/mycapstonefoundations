@@ -178,14 +178,25 @@ ul.nav__menu {
     width: 200px;
   }
 
-
-  #friends__display {
-    display: flex;
-    flex-direction:row;
-    gap: 2rem;
-    align-items:center;
-    padding: 1.5rem;
+  #friends_display {
+    padding-top: 1.5rem;
     justify-content: center;
-    color: white;
-    font-size: large;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
   }
+
+  #friendbar {
+    background-color: #454545;
+    border-color: transparent;
+    border-style: solid;
+    text-align: left;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: x-small;
+    color: white;
+    width: 275px;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+  }
+
