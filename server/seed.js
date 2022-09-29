@@ -12,10 +12,12 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
  })
 
+ ///////////////////////////////////////////////////////////////////////////
+
  module.exports = {
     seed: (req, res) => {
         sequelize.query(`
-        
+
         create table friends (
             friend_id serial primary key,
             first_name varchar(150),

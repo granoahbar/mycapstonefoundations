@@ -13,6 +13,8 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
    }
 })
 
+///////////////////////////////////////////////////////////////////////////////
+
 module.exports = {
     getFriend: (req,res) => {
         sequelize.query(`SELECT * FROM friends WHERE friend_id = ${req.params.id}`)
@@ -21,7 +23,7 @@ module.exports = {
     }
     ,
     getFriends: (req,res) => {
-        sequelize.query('SELECT * FROM friends')
+        sequelize.query('SELECT first_name, last_name FROM friends ORDER BY friend_id DESC')
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }
@@ -42,14 +44,30 @@ module.exports = {
         .catch(err => console.log)
     }
     ,
+    addFriends: (req,res) => {
+        const {first_name, last_name, notes} = req.body
+
+        sequelize.query(`INSERT INTO friends (first_name, last,name, notes)
+        VALUES ('${first_name}, '${last_name}', '${notes}';,)
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
+    }
+    ,
     displayEvents: (req,res) => {
-        sequelize.query('SELECT * FROM events')
+        sequelize.query('SELECT * FROM events ORDER BY event_date DESC')
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }
     ,
     deleteEvents: (req,res) => {
         sequelize.query(`DELETE FROM friends WHERE event_id = ${req.body.event_id}`)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
+    }
+    ,
+    getFriendInfo: (req,res) => {
+        sequelize.query(`SELECT event_name, event_date, event_time FROM events WHERE friend_id = ${req.params.id}`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }
