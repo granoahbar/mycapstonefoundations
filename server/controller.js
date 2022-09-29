@@ -14,6 +14,12 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 })
 
 module.exports = {
+    getFriend: (req,res) => {
+        sequelize.query(`SELECT * FROM friends WHERE friend_id = ${req.params.id}`)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log)
+    }
+    ,
     getFriends: (req,res) => {
         sequelize.query('SELECT * FROM friends')
         .then(dbRes => res.status(200).send(dbRes[0]))
@@ -21,7 +27,7 @@ module.exports = {
     }
     ,
     deleteFriends: (req,res) => {
-        sequelize.query('DELETE FROM friends WHERE first_name =  ')
+        sequelize.query(`DELETE FROM friends WHERE friend_id = ${req.body.friend_id}`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }
@@ -29,7 +35,7 @@ module.exports = {
     addEvents: (req,res) => {
         const {name, date, time} = req.body
 
-        sequelize.query(`INSERT INTO events (event_name, event_date, event_time)
+        sequelize.query(`INSERT INTO events (event_name, friend_id, event_date, event_time)
         VALUES ('${event_name}', ${friend_Id}, '${event_date}', '${event_time}';,)
         `)
         .then(dbRes => res.status(200).send(dbRes[0]))
@@ -43,7 +49,7 @@ module.exports = {
     }
     ,
     deleteEvents: (req,res) => {
-        sequelize.query('DELETE FROM events WHERE event_name =  ')
+        sequelize.query(`DELETE FROM friends WHERE event_id = ${req.body.event_id}`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }

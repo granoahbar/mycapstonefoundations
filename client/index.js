@@ -10,7 +10,7 @@ function myFunction(x) {
         let friendsArr = res.data.map((friend)=>{
           return(
           `<div class="appt-card">
-          <h2 id="friendbar">${friend.first_name} ${friend.last_name}</h2>
+          <a href="friendview.html" type="button" onclick="link"><h2 id="friendbar">${friend.first_name} ${friend.last_name}</h2></a>
           </div>`)
         })
         friendsDisplay.innerHTML= friendsArr
@@ -18,3 +18,9 @@ function myFunction(x) {
   }
 
   displayFriends()
+
+  function getFriend () {
+    axios.get('http://localhost:3000/friend/1')
+  }
+
+  getFriend()
