@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Nunito:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Nunito:wght@200;400;800&display=swap');
 
 body {
     margin: 0; 
@@ -132,19 +132,24 @@ ul.nav__menu {
     background-color: #000000;
     color: white;
     border-color: transparent;
-    border-style: solid;
+    border-style: none;
     width: 90px;
-    height: 60px;
+    height: 55px;
     text-align: center;
-    border-radius: 25px;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 50px;
     font-size: small;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
   }
 
   #dashhomebutton {
+    background-image: url('photos/homebutton_99695.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 60px;
     width: 40px;
     height: 40px;
-    border-radius: 50px;
   }
 
   #friends__search {
@@ -230,6 +235,8 @@ ul.nav__menu {
     flex-direction:column;
     align-items:center;
     color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
   }
 
   #remindersLabel {
@@ -239,6 +246,8 @@ ul.nav__menu {
     flex-direction:column;
     align-items:center;
     color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
   }
 
   .addFriendLabel {
@@ -251,7 +260,6 @@ ul.nav__menu {
   }
 
   #addFriendForm {
-    padding-top: 1.5rem;
     justify-content: center;
     display: flex;
     flex-direction:column;
@@ -275,10 +283,46 @@ ul.nav__menu {
     display: flex;
   }
 
-  #saveFriendButton {
-    justify-content: center;
-    width: 100px;
-    text-align: center;
+  .form {
+    margin-top: 1.5rem;
   }
 
+  #addEventForm {
+    justify-content: center;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: small;
+  }
+
+  .eventForm {
+    background-color: #454545;
+    border-color: transparent;
+    border-style: solid;
+    text-align: left;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: x-small;
+    color: white;
+    width: 275px;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+  }
+
+  .theEventForm {
+    margin-top: 1.5rem;
+  }
+
+  #saveFriendButton {
+    background-color: #000000;
+    color: rgb(35, 155, 240);
+    justify-content: center;
+    width: 125px;
+    text-align: center;
+    font-size: small;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+  }
   

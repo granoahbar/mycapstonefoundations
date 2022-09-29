@@ -37,7 +37,7 @@
    
     <div class="dashboard__menu">
         <a class= "dashbutton" href="addfriend.html" type="button" onclick="link">ADD ANOTHER FRIEND</a>
-        <a id="dashhomebutton" class= "dashbutton" href="loggedin.html" type="button" onclick="link">HOME</a>
+        <a id="dashhomebutton" class= "dashbutton" href="loggedin.html" type="button" onclick="link"></a>
         <a class= "dashbutton" href="viewreminders.html" type="button" onclick="link">VIEW UPCOMING REMINDERS</a>
     </div>
 
@@ -48,20 +48,37 @@
     </div>
 
     <form id="addFriendForm">
-        <div>
+        <div class="form">
             <head>Friends first name</head>
             <input class="friendForm" id="firstNameInput" type="text" placeholder="Type here">
         </div>
-        <div>
+        <div class="form">
             <head>Friends last name</head>
             <input class="friendForm" id="lastNameInput" type="text" placeholder="Type here">
         </div>
-        <div>
+        <div class="form">
             <head>Notes about friend</head>
             <input class="friendForm" id="NotesInput" type="text" placeholder="Type here">
         </div>
-        <div >
-            <button class="friendForm" id="saveFriendButton">SAVE FRIEND</button>
+    </form>
+
+    <div>
+        <div id="friendsLabel">
+            Add Events
+        </div>
+    </div>
+
+    <form id="addEventForm">
+        <div class="theEventForm">
+            <head>Event name</head>
+            <input class="eventForm" id="eventNameInput" type="text" placeholder="Type here">
+        </div>
+        <div class="theEventForm">
+            <head>Event date</head>
+            <input class="eventForm" id="eventDateInput" type="text" placeholder="Type here">
+        </div>
+        <div class="theEventForm">
+            <button class="eventForm" id="saveFriendButton">SAVE FRIEND</button>
         </div>
     </form>
 
