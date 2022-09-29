@@ -41,14 +41,28 @@
         <a class= "dashbutton" href="viewreminders.html" type="button" onclick="link">VIEW UPCOMING REMINDERS</a>
     </div>
 
+    <div>
+        <div id="friendsLabel">
+            Add Another Friend
+        </div>
+    </div>
+
     <form id="addFriendForm">
-        <head>First Name</head>
-        <input id="firstNameInput" type="text">
-        <head>Last Name</head>
-        <input id="lastNameInput" type="text">
-        <head>Notes</head>
-        <input id="NotesInput" type="text">
-        <button id="saveFriendButton">SAVE FRIEND</button>
+        <div>
+            <head>Friends first name</head>
+            <input class="friendForm" id="firstNameInput" type="text" placeholder="Type here">
+        </div>
+        <div>
+            <head>Friends last name</head>
+            <input class="friendForm" id="lastNameInput" type="text" placeholder="Type here">
+        </div>
+        <div>
+            <head>Notes about friend</head>
+            <input class="friendForm" id="NotesInput" type="text" placeholder="Type here">
+        </div>
+        <div >
+            <button class="friendForm" id="saveFriendButton">SAVE FRIEND</button>
+        </div>
     </form>
 
     <script src="../node_modules/axios/dist/axios.min.js"></script>

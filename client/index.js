@@ -20,16 +20,20 @@ function myFunction(x) {
     axios.get('http://localhost:3000/friends')
       .then (res => {
         let friendsArr = res.data.map((friend)=>{
-          return(
-          `<div class="appt-card">
-          <a href="friendview.html" type="button" onclick="link"><h2 id="friendbar">${friend.first_name} ${friend.last_name}</h2></a>
-          </div>`)
+          return(`
+            <div class="appt-card">
+              <a href="friendview.html" type="button" onclick="link">
+                <h2 id="friendbar">${friend.first_name} ${friend.last_name}</h2>
+              </a>
+            </div>
+          `)
         })
         friendsDisplay.innerHTML= friendsArr
       })
   }
 
   displayFriends()
+
 
 
 
@@ -49,8 +53,6 @@ function myFunction(x) {
   }
 
   displayEvents()
-
-  
 
 
   function getFriend () {
