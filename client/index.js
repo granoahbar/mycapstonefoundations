@@ -5,6 +5,8 @@ const firstNameInput = document.querySelector('#firstNameInput')
 const lastNameInput = document.querySelector('#lastNameInput')
 const notesInput = document.querySelector('#notesInput')
 const friendNameDisplay = document.querySelector('#friend_name_display')
+const friendEventsDisplay = document.querySelector('#friend_events_display')
+const friendsNotesDisplay= document.querySelector('#friend_notes_display')
 
 
 ////////////////////////////////////////////////////////////////////
@@ -12,8 +14,6 @@ const friendNameDisplay = document.querySelector('#friend_name_display')
 function myFunction(x) {
     x.classList.toggle("change");
   }
-
-
 
 
   function displayFriends () {
@@ -33,9 +33,6 @@ function myFunction(x) {
   }
 
   displayFriends()
-
-
-
 
 
   function displayEvents () {
@@ -63,7 +60,7 @@ function myFunction(x) {
     .then (res => {
       console.log(res)
       let friendName = (
-          `<h2>${res.data[0].first_name}</h2>`
+          `<h2 id="friendNameBar">${res.data[0].first_name} ${res.data[0].last_name}</h2>`
         )
       friendNameDisplay.innerHTML= friendName
     })
@@ -71,4 +68,39 @@ function myFunction(x) {
 
   getFriend()
 
+
+
+  function getFriendInfo () {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    console.log(params)
+    axios.get(`http://localhost:3000/event/${params.id}`)
+    .then (res => {
+      console.log(res)
+      let friendEvent = (
+          `<h2 id="friendEventBar">${res.data[0].event_name} ${res.data[0].event_date}</h2>`
+        )
+      friendEventsDisplay.innerHTML= friendEvent
+    })
+  }
+
+  getFriendInfo()
+
+
+
+  function getFriendNotes () {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    console.log(params)
+    axios.get(`http://localhost:3000/friend/${params.id}`)
+    .then (res => {
+      console.log(res)
+      let friendNotes = (
+          `<h2 id="friendNotesBar">${res.data[0].friend_notes} ${res.data[0].friend_notes}</h2>`
+        )
+      friendsNotesDisplay.innerHTML= friendNotes
+    })
+  }
+
+  getFriendNotes()
  

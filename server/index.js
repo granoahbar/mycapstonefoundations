@@ -4,7 +4,7 @@ const app = express()
 const cors = require('cors')
 const {SERVER_PORT} = process.env
 const {seed} = require('./seed.js')
-const {getFriends, deleteFriends, addEvents, displayEvents, deleteEvents, getFriend, getFriendInfo, addFriends} = require('./controller.js')
+const {getFriends, deleteFriends, addEvents, displayEvents, deleteEvents, getFriend, getFriendInfo, addFriends, getFriendNotes} = require('./controller.js')
 
 app.use(express.json())
 app.use(cors())
@@ -12,7 +12,8 @@ app.use(cors())
 //////////////////////////////////////////////////////////////////////////////
 
 app.post('/seed', seed)
-app.get('/events/:id', getFriendInfo)
+app.get('/event/:id', getFriendInfo)
+app.get('/friend/:id', getFriendNotes)
 app.get('/friend/:id', getFriend)
 app.get('/friends', getFriends)
 app.delete('/friends', deleteFriends)
