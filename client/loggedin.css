@@ -152,6 +152,7 @@ ul.nav__menu {
     height: 40px;
   }
 
+
   #friends__search {
     display: flex;
     flex-direction:row;
@@ -317,12 +318,24 @@ ul.nav__menu {
 
   #saveFriendButton {
     background-color: #000000;
-    color: rgb(35, 155, 240);
+    color: white;
     justify-content: center;
     width: 125px;
     text-align: center;
     font-size: small;
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
+  }
+
+  #addAnotherEventButton {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    background-color: transparent;
+    border-style: none;
+    background: -webkit-linear-gradient(rgb(94, 188, 255), rgb(242, 98, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 300px;
+    text-align: left;
   }
   

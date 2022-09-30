@@ -15,20 +15,29 @@
 <body>
 
     <nav class="nav">
+
         <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
+
         <label for="nav__checkbox" class="nav__toggle">
+
             <div class="container" onclick="myFunction(this)">
+
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
+
             </div>
+
         </label>
+
         <ul class="nav__menu">
+
             <Button id="homebutton">Better Friend</Button>
             <li><a href="#">Help</a></li>
             <li><a href="#">Contact Us</a></li>
             <li><a href="#">About</a></li>
             <li><a href="index.html" type="button" onclick="link">Log Out</a></li>
+
         </ul>
     </nav>
 
@@ -36,54 +45,46 @@
    
    
     <div class="dashboard__menu">
+
         <a class= "dashbutton" href="addfriend.html" type="button" onclick="link">ADD ANOTHER FRIEND</a>
         <a id="dashhomebutton" class= "dashbutton" href="loggedin.html" type="button" onclick="link"></a>
         <a class= "dashbutton" href="viewreminders.html" type="button" onclick="link">VIEW UPCOMING REMINDERS</a>
+
     </div>
 
     <div>
+
         <div id="friendsLabel">
             Add Another Friend
         </div>
+
     </div>
 
     <form id="addFriendForm">
+
         <div class="form">
             <head>Friends first name</head>
             <input class="friendForm" id="firstNameInput" type="text" placeholder="Type here">
         </div>
+
         <div class="form">
             <head>Friends last name</head>
             <input class="friendForm" id="lastNameInput" type="text" placeholder="Type here">
         </div>
+
         <div class="form">
             <head>Notes about friend</head>
             <input class="friendForm" id="NotesInput" type="text" placeholder="Type here">
         </div>
-    </form>
 
-    <div>
-        <div id="friendsLabel">
-            Add Events
-        </div>
-    </div>
-
-    <form id="addEventForm">
-        <div class="theEventForm">
-            <head>Event name</head>
-            <input class="eventForm" id="eventNameInput" type="text" placeholder="Type here">
-        </div>
-        <div class="theEventForm">
-            <head>Event date</head>
-            <input class="eventForm" id="eventDateInput" type="text" placeholder="Type here">
-        </div>
         <div class="theEventForm">
             <button class="eventForm" id="saveFriendButton">SAVE FRIEND</button>
         </div>
+
     </form>
 
-    <script src="../node_modules/axios/dist/axios.min.js"></script>
-<script src="./index.js"></script>
+<script src="../node_modules/axios/dist/axios.min.js"></script>
+<script src="./addfriend.js"></script>
 </body>
 
 </html>

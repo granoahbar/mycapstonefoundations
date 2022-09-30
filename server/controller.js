@@ -23,7 +23,7 @@ module.exports = {
     }
     ,
     getFriends: (req,res) => {
-        sequelize.query('SELECT first_name, last_name FROM friends ORDER BY friend_id DESC')
+        sequelize.query('SELECT * FROM friends ORDER BY friend_id DESC')
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }
