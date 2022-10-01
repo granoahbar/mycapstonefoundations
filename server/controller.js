@@ -35,7 +35,7 @@ module.exports = {
     }
     ,
     addEvents: (req,res) => {
-        const {name, date, time} = req.body
+        const {name, date, time} = req.body;
 
         sequelize.query(`INSERT INTO events (event_name, friend_id, event_date, event_time)
         VALUES ('${event_name}', ${friend_Id}, '${event_date}', '${event_time}';,)
@@ -45,10 +45,8 @@ module.exports = {
     }
     ,
     addFriends: (req,res) => {
-        const {first_name, last_name, notes} = req.body
-
-        sequelize.query(`INSERT INTO friends (first_name, last,name, notes)
-        VALUES ('${first_name}, '${last_name}', '${notes}';,)
+        sequelize.query(`INSERT INTO friends (first_name, last_name, notes)
+        VALUES ('${first_name}, '${last_name}', '${body.notes}')
         `)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
@@ -73,7 +71,7 @@ module.exports = {
     }
     ,
     getFriendNotes: (req,res) => {
-        sequelize.query(`SELECT friend_notes  FROM friends WHERE friend_id = ${req.params.id}`)
+        sequelize.query(`SELECT notes FROM friends WHERE friend_id = ${req.params.id}`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }

@@ -362,4 +362,28 @@ ul.nav__menu {
     flex-direction:column;
     align-items:center;
   }
+
+  #friendNotesBar {
+    background-color: #454545;
+    border-color: transparent;
+    border-style: solid;
+    text-align: left;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: x-small;
+    color: white;
+    width: 275px;
+    height: 300px;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+  }
+
+  #friend_notes_display {
+    padding-top: 1.5rem;
+    justify-content: center;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  
   
