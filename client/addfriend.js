@@ -6,33 +6,32 @@ const lasttNameInput = document.querySelector('#lastNameInput')
 const notesInput = document.querySelector('#notesInput')
 
 //////////////////////////////////////////////////////////////////
+function myFunction(x) {
+    x.classList.toggle("change");
+  }
 
-function addFriend () {
-
-    const {} = req.body;
-
-    console.log('works')
+function addFriends () {
 
         bodyObj= { 
-        firstname: firstNameInput.value,
-        lastname: lastNameInput.value,
+        first_name: firstNameInput.value,
+        last_name: lastNameInput.value,
         notes: notesInput.value
-    }
-    console.log(bodyObj)
+    };
+    
     axios.post('http://localhost:3000/friends', bodyObj)
     
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    .then(dbRes => res.status(200).send(dbRes[0]))
+    .catch(err => console.log(err))
 
-      console.log('rgerg')
+    console.log(bodyObj)
       
   }
 
 addForm.addEventListener('submit',(e) => {
     e.preventDefault()
-    addFriend()
+    addFriends()
+    alert('Friend Added!')
+    firstNameInput.value = ''
+    lastNameInput.value = ''
+    notesInput.value = ''
 })

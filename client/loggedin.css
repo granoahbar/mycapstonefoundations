@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Nunito:wght@200;400;800&display=swap');
 
+@import url('https://css.gg/add-r.css');
+
+@import url('https://css.gg/home.css');
+
+
 body {
     margin: 0; 
     padding: 0; 
@@ -128,20 +133,88 @@ ul.nav__menu {
     justify-content: center;
   }
 
-  .dashbutton {
-    background-color: #000000;
-    color: white;
-    border-color: transparent;
-    border-style: none;
-    width: 90px;
-    height: 55px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50px;
-    font-size: small;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
+  /* .dashbuttonhome {
+    background:
+        linear-gradient(to left,
+            currentColor 5px,transparent 0)
+            no-repeat 0 bottom/4px 2px,
+        linear-gradient(to left,
+            currentColor 5px,transparent 0)
+            no-repeat right bottom/4px 2px;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 18px;
+    height: 14px;
+    border: 2px solid;
+    border-top: 0;
+    border-bottom: 0;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-bottom: -2px
   }
+  .dashbuttonhome::after,
+  .dashbuttonhome::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+  }
+  .dashbuttonhome::before {
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-top-left-radius: 4px;
+    transform: rotate(45deg);
+    top: -5px;
+    border-radius: 3px;
+    width: 14px;
+    height: 14px;
+    left: 0
+  }
+  .dashbuttonhome::after {
+    width: 8px;
+    height: 10px;
+    border: 2px solid;
+    border-radius: 100px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0;
+    left: 3px;
+    bottom: 0
+  } */
+
+  /* .dashbuttonaddfriend {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    transform: scale(var(--ggs,1));
+    border-radius: 4px
+ }
+ .dashbuttonaddfriend::after,
+ .dashbuttonaddfriend::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 5px;
+    top: 8px;
+    left: 4px
+ }
+ .dashbuttonaddfriend::after {
+    width: 2px;
+    height: 10px;
+    top: 4px;
+    left: 8px
+ } */
 
   #friends__search {
     display: flex;
@@ -386,4 +459,11 @@ ul.nav__menu {
     align-items:center;
   }
   
+  #background {
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    background-color: #b9b9b919;
+  }
+
+
   

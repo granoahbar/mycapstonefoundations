@@ -12,9 +12,9 @@ app.use(cors())
 //////////////////////////////////////////////////////////////////////////////
 
 app.post('/seed', seed)
-app.get('/event/:id', getFriendInfo)
+app.get('/events/:id', getFriendInfo)
 app.get('/friend/:id', getFriendNotes)
-app.get('/friend/:id', getFriend)
+app.get('/friends/:id', getFriend)
 app.get('/friends', getFriends)
 app.delete('/friends', deleteFriends)
 app.post('/events', addEvents)

@@ -46,41 +46,45 @@
    
     <div class="dashboard__menu">
 
-        <a class= "dashbutton" href="addfriend.html" type="button" onclick="link">ADD ANOTHER FRIEND</a>
-        <a class= "dashbutton" href="loggedin.html" type="button" onclick="link">DASH HOME</a>
+        <a class="gg-add-r" href="addfriend.html" type="button" onclick="link"></a>
+        <a class="gg-home" href="loggedin.html" type="button" onclick="link"></a>
 
     </div>
 
-    <div>
+    <div id="background">
 
-        <div id="friendsLabel">
-            Add Another Friend
+        <div>
+
+            <div id="friendsLabel">
+                Add Another Friend
+            </div>
+
         </div>
+
+        <form id="addFriendForm">
+
+            <div class="form">
+                <head>Friends first name</head>
+                <input class="friendForm" id="firstNameInput" type="text" placeholder="Type here">
+            </div>
+
+            <div class="form">
+                <head>Friends last name</head>
+                <input class="friendForm" id="lastNameInput" type="text" placeholder="Type here">
+            </div>
+
+            <div class="form">
+                <head>Notes about friend</head>
+                <input class="friendForm" id="notesInput" type="text" placeholder="Type here">
+            </div>
+
+            <div class="theEventForm">
+                <button class="eventForm" id="saveFriendButton" type="submit">SAVE FRIEND</button>
+            </div>
+
+        </form>
 
     </div>
-
-    <form id="addFriendForm">
-
-        <div class="form">
-            <head>Friends first name</head>
-            <input class="friendForm" id="firstNameInput" type="text" placeholder="Type here">
-        </div>
-
-        <div class="form">
-            <head>Friends last name</head>
-            <input class="friendForm" id="lastNameInput" type="text" placeholder="Type here">
-        </div>
-
-        <div class="form">
-            <head>Notes about friend</head>
-            <input class="friendForm" id="notesInput" type="text" placeholder="Type here">
-        </div>
-
-        <div class="theEventForm">
-            <button class="eventForm" id="saveFriendButton" type="submit">SAVE FRIEND</button>
-        </div>
-
-    </form>
 
 <script src="../node_modules/axios/dist/axios.min.js"></script>
 <script src="./addfriend.js"></script>
