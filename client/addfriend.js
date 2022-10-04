@@ -33,5 +33,4 @@ addForm.addEventListener('submit',(e) => {
     firstNameInput.value = ''
     lastNameInput.value = ''
     notesInput.value = ''
-    .then(window.location.replace("http://127.0.0.1:5500/client/loggedin.html"))
 })
