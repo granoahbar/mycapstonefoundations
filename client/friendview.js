@@ -27,7 +27,6 @@ function getFriendInfo () {
         return(
           `
           <h2 id="friendEventBar">${event.event_name} ${event.event_date}</h2>
-          <button type="button" id="deleteEventButton">DELETE EVENT</button>
           `
         )
       })
@@ -111,7 +110,7 @@ function deleteFriend () {
 
     axios.delete(`http://localhost:3000/friend/${params.id}`)
 
-    .then(dbRes => res.status(200).send(dbRes[0]))
+    .then(Res => window.location.href = "http://127.0.0.1:5500/client/loggedin.html")
     .catch(err => console.log(err))
     
   
@@ -119,24 +118,4 @@ function deleteFriend () {
 
 friendDeleteButton.addEventListener('click',() => {
 deleteFriend()
-})
-
-
-
-function deleteEvent () {
-
-  console.log('ool beans')
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const params = Object.fromEntries(urlSearchParams.entries());
-  console.log(params.id)
-
-  axios.delete(`http://localhost:3000/event/${params.id}`)
-
-  .then(dbRes => res.status(200).send(dbRes[0]))
-  .catch(err => console.log(err))
-
-}
-
-deleteEventButton.addEventListener('click',() => {
-deleteEvent()
 })

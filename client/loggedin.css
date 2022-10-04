@@ -135,29 +135,6 @@ ul.nav__menu {
     justify-content: center;
   }
 
-  #friendssearchbutton {
-    background-color: #454545;
-    border-color: transparent;
-    border-style: solid;
-    text-align: center;
-    border-radius: 25px;
-    padding: 5px;
-    font-size: x-small;
-    color: white;
-  }
-
-  #friendssearchbar {
-    background-color: #454545;
-    border-color: transparent;
-    border-style: solid;
-    text-align: center;
-    border-radius: 25px;
-    padding: 5px;
-    font-size: x-small;
-    color: white;
-    width: 200px;
-  }
-
   #friends_display {
     padding-top: 1.5rem;
     justify-content: center;
@@ -178,6 +155,7 @@ ul.nav__menu {
     width: 275px;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    box-shadow: 4px 4px 5px #00000067;
   }
 
   #friendbar:hover {
@@ -206,6 +184,7 @@ ul.nav__menu {
     width: 275px;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    box-shadow: 4px 4px 5px #00000067;
   }
 
   #friendsLabel {
@@ -261,6 +240,7 @@ ul.nav__menu {
     width: 275px;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    box-shadow: 4px 4px 5px #00000067;
   }
 
   .form {
@@ -289,6 +269,7 @@ ul.nav__menu {
     width: 275px;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    box-shadow: 4px 4px 5px #00000067;
   }
 
   .theEventForm {
@@ -340,6 +321,7 @@ ul.nav__menu {
     width: 275px;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    box-shadow: 4px 4px 5px #00000067;
   }
 
   #friend_events_display {
@@ -359,9 +341,10 @@ ul.nav__menu {
     font-size: x-small;
     color: white;
     width: 275px;
-    height: 300px;
+    height: auto;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    box-shadow: 4px 4px 5px #00000067;
   }
 
   #friend_notes_display {
@@ -390,10 +373,8 @@ ul.nav__menu {
     flex-direction: column;
     background-color: #000000;
     color: rgb(255, 41, 41);
-    text-align: center;
     font-size: x-small;
     font-weight: 800;
-    justify-content: center;
   }
 
   #deleteEventButton {
@@ -412,6 +393,7 @@ ul.nav__menu {
     font-size: x-small;
     font-weight: 800;
     justify-content: center;
+    box-shadow: 4px 4px 5px #00000067;
   }
 
   #friendDeleteButton_Display {
@@ -422,6 +404,9 @@ ul.nav__menu {
     align-items:center;
   }
 
+  #friendDeleteButton {
+    box-shadow: 4px 4px 5px #00000067;
+  }
 
 
   

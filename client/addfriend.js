@@ -20,11 +20,10 @@ function addFriends () {
     
     axios.post('http://localhost:3000/friends', bodyObj)
     
-    .then(dbRes => res.status(200).send(dbRes[0]))
+    .then(Res => window.location.href = "http://127.0.0.1:5500/client/loggedin.html")
     .catch(err => console.log(err))
 
     console.log(bodyObj)
-      
   }
 
 addForm.addEventListener('submit',(e) => {
