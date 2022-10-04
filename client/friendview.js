@@ -5,6 +5,9 @@ const friendEventsDisplay = document.querySelector('#friend_events_display')
 const friendNotesDisplay= document.querySelector('#friend_notes_display')
 const eventNameInput = document.querySelector('#eventNameInput')
 const eventDateInput = document.querySelector('#eventDateInput')
+const friendDeleteButton = document.querySelector('#friendDeleteButton')
+const deleteEventButton = document.querySelector('#deleteEventButton')
+
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -20,13 +23,17 @@ function getFriendInfo () {
     console.log(params)
     axios.get(`http://localhost:3000/events/${params.id}`)
     .then (res => {
-      console.log(res)
-      let friendEvent = (
-          `<h2 id="friendEventBar">${res.data[0].event_name} ${res.data[0].event_date}</h2>`
+      let friendEventsArr = res.data.map((event)=>{
+        return(
+          `
+          <h2 id="friendEventBar">${event.event_name} ${event.event_date}</h2>
+          <button type="button" id="deleteEventButton">DELETE EVENT</button>
+          `
         )
-      friendEventsDisplay.innerHTML= friendEvent
+      })
+      friendEventsDisplay.innerHTML= friendEventsArr
     })
-  }
+  } 
 
   getFriendInfo()
 
@@ -72,7 +79,7 @@ function getFriendNotes () {
     const params = Object.fromEntries(urlSearchParams.entries());
     console.log(params.id)
 
-    bodyObj= { 
+    let bodyObj= { 
     friend_id: parseInt(params.id),
     event_name: eventNameInput.value,
     event_date: eventDateInput.value
@@ -90,7 +97,46 @@ function getFriendNotes () {
 addEventForm.addEventListener('submit',(e) => {
 e.preventDefault()
 addEvents()
-alert('Event Added!')
 eventNameInput.value = ''
 eventDateInput.value = ''
+.then(location.reload())
+})
+
+
+function deleteFriend () {
+
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    console.log(params.id)
+
+    axios.delete(`http://localhost:3000/friend/${params.id}`)
+
+    .then(dbRes => res.status(200).send(dbRes[0]))
+    .catch(err => console.log(err))
+    
+  
+}
+
+friendDeleteButton.addEventListener('click',() => {
+deleteFriend()
+})
+
+
+
+function deleteEvent () {
+
+  console.log('ool beans')
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+  console.log(params.id)
+
+  axios.delete(`http://localhost:3000/event/${params.id}`)
+
+  .then(dbRes => res.status(200).send(dbRes[0]))
+  .catch(err => console.log(err))
+
+}
+
+deleteEventButton.addEventListener('click',() => {
+deleteEvent()
 })

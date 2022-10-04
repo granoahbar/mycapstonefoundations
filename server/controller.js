@@ -5,13 +5,14 @@ const {CONNECTION_STRING} = process.env;
 const Sequelize = require('sequelize');
  
 const sequelize = new Sequelize(CONNECTION_STRING, {
-   dialect: 'postgres',
+   dialect: 'postgres', 
    dialectOptions: {
        ssl: {
            rejectUnauthorized: false
-       }
+       },
+        multipleStatements: true
    }
-})
+});
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -29,10 +30,11 @@ module.exports = {
         .catch(err => console.log)
     }
     ,
-    deleteFriends: (req,res) => {
-        sequelize.query(`DELETE FROM friends WHERE friend_id = ${req.body.friend_id}`)
+    deleteFriend: (req,res) => {
+        sequelize.query(`DELETE FROM events WHERE friend_id = ${req.params.id}`)
+        .then(()=>sequelize.query(`DELETE FROM friends WHERE friend_id = ${req.params.id}`))
         .then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log)
+        .catch(err => console.log(err))
     }
     ,
     addEvents: (req,res) => {
@@ -61,8 +63,8 @@ module.exports = {
         .catch(err => console.log)
     }
     ,
-    deleteEvents: (req,res) => {
-        sequelize.query(`DELETE FROM friends WHERE event_id = ${req.body.event_id}`)
+    deleteEvent: (req,res) => {
+        sequelize.query(`DELETE FROM events WHERE friend_id = ${req.params.id} AND event_id = ${req.params.event_id}`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log)
     }

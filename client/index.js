@@ -4,6 +4,7 @@ const saveFriendButton = document.querySelector('#saveFriendButton')
 const firstNameInput = document.querySelector('#firstNameInput')
 const lastNameInput = document.querySelector('#lastNameInput')
 const notesInput = document.querySelector('#notesInput')
+const deleteFriendButton = document.querySelector('#deleteFriendButton')
 
 
 ////////////////////////////////////////////////////////////////////
@@ -20,7 +21,7 @@ function myFunction(x) {
           return(`
             <div class="appt-card">
               <a href="friendview.html?id=${friend.friend_id}" type="button" onclick="link">
-                <h2 id="friendbar">${friend.first_name} ${friend.last_name}</h2>
+                <h2 id="friendbar">${friend.first_name} ${friend.last_name}<h2/>
               </a>
             </div>
           `)
@@ -47,3 +48,5 @@ function myFunction(x) {
   }
 
   displayEvents()
+
+
